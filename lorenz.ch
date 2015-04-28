@@ -7,14 +7,16 @@
 
 // ---- Funktionsdeklarationen ----
 double Abl_X(double t){
-	return y2;
+	return -10*t ;
 }
 
 double Abl_Y(double t){
 	return 6*y1 - 6 * Abl_V1(y1) * Abl_V1(y1) * y1 - Abl_V1(y1);
 }
 
-double Abl_Z(double t)
+double Abl_Z(double t){
+	return 
+}
 
 
 int main(){
@@ -29,17 +31,6 @@ int main(){
 
 	for (i=0; i<steps; i++){
 		x[i+1] = x[i] + H;
-	}
-	
-	// Euler explizit
-	array double y1[steps], y2[steps];
-	y1[0] = 1;
-	y2[0] = 0;
-	
-	for (i=0; i<steps; i++){
-		y1[i+1] = y1[i] + H*Abl_V1(y2[i]);
-		y2[i+1] = y2[i] + H*Abl_V2(y1[i]);
-		//x[i+1] = x[i] + H;
 	}
 	
 	// RK2
